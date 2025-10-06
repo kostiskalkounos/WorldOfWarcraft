@@ -1,6 +1,6 @@
-VER 3 00000000000000AD " " "134400"
-#showtooltip 13
-/cast [@focus] Cheap Shot
+VER 3 00000000000000A4 " " "538745"
+#showtooltip Healthstone
+/use Healthstone
 END
 VER 3 000000000000000A " " "134400"
 #showtooltip Polymorph(Sheep)
@@ -10,8 +10,8 @@ VER 3 000000000000000A " " "134400"
 END
 VER 3 000000000000000C " " "INV_MISC_QUESTIONMARK"
 #showtooltip Slow
-/cast [modifier:ctrl, target=focus] Slow
-/cast [modifier:shift, target=focus] Slow
+/cast [mod:ctrl, target=focus] Slow
+/cast [mod:shift, target=focus] Slow
 /cast [nomod] Slow
 END
 VER 3 000000000000000D " " "INV_MISC_QUESTIONMARK"
@@ -28,7 +28,7 @@ VER 3 000000000000000F " " "INV_MISC_QUESTIONMARK"
 /cancelaura Invisibility
 /cancelaura Ice Block
 /cancelaura Hot Streak!
-/cancelaura Hot Streak!
+/cancelaura Hyperthermia
 /cast Arcane Barrage
 END
 VER 3 0000000000000011 " " "INV_MISC_QUESTIONMARK"
@@ -58,9 +58,8 @@ END
 VER 3 0000000000000024 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Stealth
 /cast !Stealth
+/stopattack
 /cancelaura Shuriken Toss
-/stopattack
-/stopattack
 /cancelaura Shadowmeld
 /cast !Stealth
 END
@@ -97,20 +96,20 @@ VER 3 000000000000002A " " "INV_MISC_QUESTIONMARK"
 /cast [mod:cmd, @focus] Poisoned Knife
 /cast [mod:cmd, @focus] Shuriken Toss
 END
-VER 3 00000000000000A4 " " "538745"
-#showtooltip Healthstone
-/use Healthstone
+VER 3 0000000000000032 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Kick
+/cast [nomod] Kick
+/cast [mod:ctrl, target=focus] Kick
+/cast [mod:shift, target=focus] Kick
 END
 VER 3 0000000000000031 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Backstab
 /cast [@target] Backstab
 /startattack [@target, exists]
 END
-VER 3 0000000000000032 " " "INV_MISC_QUESTIONMARK"
-#showtooltip Kick
-/cast [nomod] Kick
-/cast [mod:ctrl, target=focus] Kick
-/cast [mod:shift, target=focus] Kick
+VER 3 00000000000000AD " " "134400"
+#showtooltip 13
+/cast [@focus] Cheap Shot
 END
 VER 3 0000000000000033 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Crimson Vial
@@ -177,7 +176,6 @@ END
 VER 3 0000000000000006 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Counterspell
 /stopcasting
-/csq
 /cancelaura Ice Block
 /cast [modifier:ctrl, target=focus] Counterspell
 /cast [modifier:shift, target=focus] Counterspell
@@ -200,6 +198,7 @@ VER 3 0000000000000093 " " "134400"
 /cast Freeze
 /cast Water Jet
 /cast Waterbolt
+/cast Berserking(Racial)
 /petattack
 END
 VER 3 0000000000000070 " " "INV_MISC_QUESTIONMARK"
@@ -239,12 +238,14 @@ VER 3 00000000000000A6 " " "134400"
 /cast Shadowmeld
 /stopcasting
 /stopattack
-/stopattack
 /cast Shadowmeld
 END
 VER 3 00000000000000A7 " " "134400"
 #showtooltip Zovaal's Soul Eater
-/cast Scourgebound Vanquisher
+--/cast Highland Drake
+--/cast Zovaal's Soul Eater
+--/cast Scourgebound Vanquisher
+/cast Twilight Avenger
 /cancelaura Alliance Flag
 /cancelaura Horde Flag
 /cancelaura Netherstorm Flag
@@ -318,7 +319,9 @@ VER 3 000000000000009C " " "134400"
 END
 VER 3 0000000000000089 " " "134400"
 #showtooltip Icebound Frostbrood Vanquisher
-/cast Twilight Avenger
+--/cast Twilight Avenger
+--/cast Scourgebound Vanquisher
+/cast G-99 Breakneck
 /cancelaura Alliance Flag
 /cancelaura Horde Flag
 /cancelaura Netherstorm Flag
@@ -327,13 +330,13 @@ END
 VER 3 0000000000000088 " " "2103806"
 /run C_NamePlate.SetNamePlateFriendlySize(70, 100)
 END
-VER 3 00000000000000A3 " " "134400"
-#showtooltip
-/use 14
-END
 VER 3 00000000000000AE " " "134400"
 #showtooltip Blind
 /cast [known: Shadowy Duel] Shadowy Duel ; [@focus] Garrote
+END
+VER 3 00000000000000A3 " " "134400"
+#showtooltip
+/use 14
 END
 VER 3 00000000000000AF " " "134400"
 #showtooltip Poisoned Knife
@@ -352,6 +355,18 @@ VER 3 00000000000000B6 " " "134400"
 /cast [@target] Shuriken Storm
 /startattack [@target, exists]
 END
+VER 3 00000000000000B7 " " "4226156"
+#showtooltip Ice Wall
+/cast [@cursor] Ice Wall
+END
+VER 3 00000000000000B8 " " "134400"
+#showtooltip
+/use 6
+END
+VER 3 00000000000000B9 " " "134400"
+#showtooltip
+/use 15
+END
 VER 3 000000000000009E "Bags" "134400"
 /run C_Container.SetSortBagsRightToLeft(true)
 /run C_Container.SetInsertItemsLeftToRight(false)
@@ -364,13 +379,10 @@ END
 VER 3 000000000000009B "DELAY MS" "135751"
 /dump GetCVar("SpellQueueWindow")
 /console SpellQueueWindow 130
-/console SpellQueueWindow 160
+/console SpellQueueWindow 170
 END
 VER 3 00000000000000A0 "Enemy nameplates" "135147"
 /run local U=UnitIsUnit hooksecurefunc("CompactUnitFrame_UpdateName",function(F)if IsActiveBattlefieldArena()and F.unit:find("nameplate")then for i=1,5 do if U(F.unit,"arena"..i)then F.name:SetText(i)F.name:SetTextColor(1,1,0)break end end end end)
-END
-VER 3 00000000000000A1 "Move ToT" "135147"
-/run local f=TargetFrameToT f:RegisterForDrag("LeftButton") f:SetScript("OnDragStart", f.StartMoving) f:SetScript("OnDragStop", f.StopMovingOrSizing)
 END
 VER 3 0000000000000086 "nameplate" "135147"
 /run C_NamePlate.SetNamePlateFriendlySize(70, 100)
