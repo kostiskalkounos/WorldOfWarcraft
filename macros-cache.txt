@@ -1,9 +1,6 @@
-VER 3 00000000000000C9 " " "134400"
-#showtooltip Combustion
-/use 13
-/cast Berserking(Racial)
-/cast Blood Fury(Racial)
-/cast Combustion
+VER 3 00000000000000C2 " " "134400"
+#showtooltip [known: Greater Pyroblast] Greater Pyroblast ; Fire Blast
+/cast [known: Greater Pyroblast] Greater Pyroblast ; Fire Blast
 END
 VER 3 000000000000000F " " "INV_MISC_QUESTIONMARK"
 #showtooltip Arcane Barrage
@@ -42,8 +39,7 @@ VER 3 0000000000000024 " " "INV_MISC_QUESTIONMARK"
 END
 VER 3 0000000000000025 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Eviscerate
-/cast [nomod, @target] Eviscerate
-/cast [mod:cmd, @target] Death from Above
+/cast [@target] Eviscerate
 /startattack [nostealth, @target, exists]
 END
 VER 3 0000000000000026 " " "INV_MISC_QUESTIONMARK"
@@ -59,10 +55,10 @@ VER 3 0000000000000027 " " "INV_MISC_QUESTIONMARK"
 /cast Sap
 END
 VER 3 0000000000000028 " " "INV_MISC_QUESTIONMARK"
-#showtooltip Shadow Dance
+#showtooltip Shadow Blades
 /cancelaura Subterfuge
 /use 13
-/cast Shadow Dance
+/cast Shadow Blades
 END
 VER 3 000000000000002A " " "INV_MISC_QUESTIONMARK"
 #showtooltip Vanish
@@ -92,13 +88,12 @@ VER 3 00000000000000AD " " "134400"
 /cast Combustion
 END
 VER 3 0000000000000033 " " "INV_MISC_QUESTIONMARK"
-#showtooltip Crimson Vial
+#showtooltip Blind
 /cast [target=focus] Gouge
 END
-VER 3 0000000000000034 " " "INV_MISC_QUESTIONMARK"
-#showtooltip [known: Shadowy Duel] Shadowy Duel ; Kidney Shot
-/cast [mod:shift, target=focus] Kidney Shot
-/cast [mod:ctrl, target=focus] Kidney Shot
+VER 3 0000000000000034 " " "134400"
+#showtooltip
+/cast [target=focus] Kidney Shot
 END
 VER 3 0000000000000035 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Sap
@@ -161,10 +156,6 @@ VER 3 0000000000000006 " " "INV_MISC_QUESTIONMARK"
 /cast [nomodifier] Counterspell
 /run if IsAltKeyDown()then PetDismiss()end
 END
-VER 3 0000000000000069 " " "INV_MISC_QUESTIONMARK"
-#showtooltip Sprint
-/cast [target=focus] Shadowstep
-END
 VER 3 0000000000000093 " " "134400"
 #showtooltip Ray of Frost
 /use 13
@@ -193,9 +184,122 @@ VER 3 000000000000006B " " "INV_MISC_QUESTIONMARK"
 /cast [modifier:ctrl, target=focus] Spellsteal
 /cast [nomodifier] Spellsteal
 END
-VER 3 000000000000008A " " "134400"
+VER 3 00000000000000B9 " " "134400"
+#showtooltip
+/use 15
+END
+VER 3 0000000000000088 " " "2103806"
+/run C_NamePlate.SetNamePlateFriendlySize(70, 100)
+END
+VER 3 00000000000000A2 " " "134400"
+#showtooltip Arcane Missiles
+/cast [nochanneling: Arcane Missiles] Arcane Missiles
+END
+VER 3 00000000000000AF " " "134400"
+#showtooltip Poisoned Knife
+/cast [@focus] Poisoned Knife
+END
+VER 3 000000000000009C " " "134400"
+#showtooltip Spellsteal
+/cancelaura Invisibility
+/cancelaura Hot Streak!
+/cancelaura Hyperthermia
+/cast [modifier:ctrl, target=focus] Spellsteal
+/cast [nomodifier] Spellsteal
+END
+VER 3 000000000000000A " " "134400"
+#showtooltip Polymorph(Sheep)
+/cast [modifier:ctrl, target=focus] Polymorph(Sheep)
+/cast [modifier:shift, target=focus] Polymorph(Sheep)
+/cast [nomodifier] Polymorph(Sheep)
+END
+VER 3 000000000000000D " " "INV_MISC_QUESTIONMARK"
+#showtooltip Ice Lance
+/cancelaura Invisibility
+/cancelaura Ice Block
+/cancelaura Hot Streak!
+/cancelaura Hyperthermia
+/cast Ice Lance
+END
+VER 3 00000000000000B0 " " "134400"
+#showtooltip 13
+/cast [@focus] Shuriken Toss
+END
+VER 3 00000000000000A3 " " "134400"
+#showtooltip
+/use 14
+END
+VER 3 00000000000000B6 " " "134400"
+#showtooltip Shuriken Storm
+/cast [@target] Shuriken Storm
+/startattack [@target, exists]
+END
+VER 3 00000000000000C5 " " "134400"
+#showtooltip
+/cast [known: Presence of Mind] Presence of Mind ; Touch of the Magi
+END
+VER 3 00000000000000B8 " " "134400"
+#showtooltip
+/use 6
+END
+VER 3 00000000000000C7 " " "134400"
+#showtooltip
+/cast [known:Snowdrift] Snowdrift; Frozen Orb
+END
+VER 3 0000000000000094 " " "134400"
+#showtooltip [known: Conjure Refreshment] Conjure Refreshment ; Recuperate
+/cast [nomod] Conjured Mana Bun
+/cast [nomod] Recuperate
+/cast [mod:ctrl] Conjure Refreshment
+/cast [mod:shift] Conjure Refreshment
+/run if IsAltKeyDown()then PetDismiss()end
+END
+VER 3 00000000000000D8 " " "134400"
+#showtooltip [known: Dragon's Breath] Dragon's Breath ; [known: Supernova] Supernova ; Blizzard
+/cast [known: Dragon's Breath] Dragon's Breath ; [known: Supernova] Supernova ; Blizzard
+END
+VER 3 00000000000000DA " " "134400"
+#showtooltip Mind Control
+/cast [mod:ctrl, target=focus] Mind Control
+/cast [mod:shift, target=focus] Mind Control
+/cast [nomod] Mind Control
+END
+VER 3 00000000000000DB " " "134400"
+#showtooltip Holy Word: Chastise
+/cast [@focus] Holy Word: Chastise
+END
+VER 3 00000000000000CE " " "INV_Misc_QuestionMark"
 #showtooltip Remove Curse
-/cast [target=party1] Remove Curse
+/cast [nomod, target=party1] Remove Curse
+/cast [mod:ctrl, target=party2] Remove Curse
+/cast [mod:shift, target=party2] Remove Curse
+END
+VER 3 00000000000000CF " " "INV_Misc_QuestionMark"
+#showtooltip Ice Lance
+/cancelaura Invisibility
+/cancelaura Ice Block
+/cancelaura Hot Streak!
+/cancelaura Hyperthermia
+/cast Ice Lance
+/petattack
+END
+VER 3 00000000000000D0 " " "INV_Misc_QuestionMark"
+#showtooltip [known: Mirror Image] Mirror Image ; Alter Time
+/cast [known: Mirror Image] Mirror Image ; Alter Time
+END
+VER 3 00000000000000D1 " " "INV_Misc_QuestionMark"
+#showtooltip [known: Frost Bomb] Frost Bomb ; Ray of Frost
+/cast [known: Frost Bomb] Frost Bomb ; Ray of Frost
+END
+VER 3 00000000000000D2 " " "134400"
+#showtooltip Shadowstep
+/cast [nomod] Shadowstep
+/cast [mod:ctrl, @focus] Shadowstep
+/cast [mod:shift, @focus] Shadowstep
+END
+VER 3 00000000000000C4 " " "134400"
+#showtooltip [known: Evocation] Evocation ; Arcane Orb
+/cast [known: Evocation] Evocation ; Arcane Orb
 END
 VER 3 0000000000000099 " " "134400"
 #showtooltip Blink
@@ -217,6 +321,7 @@ VER 3 00000000000000A7 " " "134400"
 /cancelaura Horde Flag
 /cancelaura Netherstorm Flag
 /cancelaura Deephaul Crystal
+/cancelaura Slow fall
 END
 VER 3 00000000000000A9 " " "236272"
 #showtooltip
@@ -261,86 +366,14 @@ VER 3 000000000000006C " " "INV_MISC_QUESTIONMARK"
 /cancelaura Ice Block
 /cast [known: Scorch] Scorch ; Flamestrike
 END
-VER 3 0000000000000094 " " "134400"
-#showtooltip Conjure Refreshment
-/cast [nomod] Conjured Mana Bun
-/cast [nomod] Recuperate
-/cast [mod:ctrl] Conjure Refreshment
-/cast [mod:shift] Conjure Refreshment
-/run if IsAltKeyDown()then PetDismiss()end
-END
-VER 3 0000000000000068 " " "INV_MISC_QUESTIONMARK"
-#showtooltip Mutilate
-/cast [nostealth] startattack
-/cast Mutilate
-END
-VER 3 00000000000000A2 " " "134400"
-#showtooltip Arcane Missiles
-/cast [nochanneling: Arcane Missiles] Arcane Missiles
-END
-VER 3 000000000000009C " " "134400"
-#showtooltip Spellsteal
-/cancelaura Invisibility
-/cancelaura Hot Streak!
-/cancelaura Hyperthermia
-/cast [modifier:ctrl, target=focus] Spellsteal
-/cast [nomodifier] Spellsteal
-END
-VER 3 0000000000000089 " " "134400"
-#showtooltip Icebound Frostbrood Vanquisher
---/cast Twilight Avenger
---/cast Scourgebound Vanquisher
-/cast G-99 Breakneck
-/cancelaura Alliance Flag
-/cancelaura Horde Flag
-/cancelaura Netherstorm Flag
-/cancelaura Deephaul Crystal
-END
-VER 3 000000000000000A " " "134400"
-#showtooltip Polymorph(Sheep)
-/cast [modifier:ctrl, target=focus] Polymorph(Sheep)
-/cast [modifier:shift, target=focus] Polymorph(Sheep)
-/cast [nomodifier] Polymorph(Sheep)
-END
-VER 3 00000000000000AE " " "134400"
-#showtooltip Blind
-/cast [known: Shadowy Duel] Shadowy Duel ; [@focus] Garrote
-END
-VER 3 000000000000000D " " "INV_MISC_QUESTIONMARK"
-#showtooltip Ice Lance
-/cancelaura Invisibility
-/cancelaura Ice Block
-/cancelaura Hot Streak!
-/cancelaura Hyperthermia
-/cast Ice Lance
-END
-VER 3 00000000000000B0 " " "134400"
-#showtooltip Shuriken Toss
-/cast [@focus] Shuriken Toss
-END
-VER 3 00000000000000A3 " " "134400"
-#showtooltip
-/use 14
-END
-VER 3 00000000000000B6 " " "134400"
-#showtooltip Shuriken Storm
-/cast [@target] Shuriken Storm
-/startattack [@target, exists]
-END
-VER 3 00000000000000C5 " " "134400"
-#showtooltip
-/cast [known: Presence of Mind] Presence of Mind ; Touch of the Magi
-END
-VER 3 00000000000000B8 " " "134400"
-#showtooltip
-/use 6
-END
-VER 3 00000000000000C7 " " "134400"
-#showtooltip
-/cast [known:Snowdrift] Snowdrift; Frozen Orb
-END
 VER 3 00000000000000C8 " " "135754"
 /focus [@mouseover]
+END
+VER 3 00000000000000D5 " " "134400"
+#showtooltip [known: Shiv] Shiv ; Cheap Shot
+/cast [nomod] [known: Shiv] Shiv ; Cheap Shot
+/cast [mod:ctrl, @focus] [known: Shiv] Shiv ; Cheap Shot
+/cast [mod:shift, @focus][known: Shiv] Shiv ; Cheap Shot
 END
 VER 3 00000000000000BC " " "134400"
 #showtooltip Shadow Word: Death
@@ -351,10 +384,6 @@ VER 3 00000000000000BC " " "134400"
 /cast Shadow Word: Death
 /targetlasttarget [harm]
 END
-VER 3 00000000000000AF " " "134400"
-#showtooltip Poisoned Knife
-/cast [@focus] Poisoned Knife
-END
 VER 3 00000000000000C0 " " "134400"
 #showtooltip
 /cast [known: Mirror Image] Mirror Image ; Alter Time
@@ -363,21 +392,27 @@ VER 3 00000000000000C1 " " "134400"
 #showtooltip
 /cast [known: Frost Bomb] Frost Bomb ; Ray of Frost
 END
-VER 3 00000000000000C2 " " "134400"
-#showtooltip [known: Greater Pyroblast] Greater Pyroblast ; Fire Blast
-/cast [known: Greater Pyroblast] Greater Pyroblast ; Fire Blast
+VER 3 0000000000000089 " " "134400"
+#showtooltip Icebound Frostbrood Vanquisher
+--/cast Twilight Avenger
+--/cast Scourgebound Vanquisher
+/cast G-99 Breakneck
+/cancelaura Alliance Flag
+/cancelaura Horde Flag
+/cancelaura Netherstorm Flag
+/cancelaura Deephaul Crystal
+/cancelaura Slow fall
 END
 VER 3 00000000000000C3 " " "134400"
 #showtooltip [known: Meteor] Meteor ; Combustion
 /cast [known: Meteor] Meteor ; Combustion
 END
-VER 3 00000000000000C4 " " "134400"
-#showtooltip [known: Evocation] Evocation ; Arcane Orb
-/cast [known: Evocation] Evocation ; Arcane Orb
-END
-VER 3 00000000000000B3 " " "134400"
-#showtooltip Sprint
-/cast Grapplig Hook
+VER 3 00000000000000C9 " " "134400"
+#showtooltip Combustion
+/use 13
+/cast Berserking(Racial)
+/cast Blood Fury(Racial)
+/cast Combustion
 END
 VER 3 00000000000000C6 " " "134400"
 #showtooltip
@@ -385,31 +420,57 @@ VER 3 00000000000000C6 " " "134400"
 /cast [known:Mass Invisibility] Mass Invisibility; Greater Invisibility
 END
 VER 3 00000000000000B7 " " "134400"
-#showtooltip
+#showtooltip [@cursor,known:Ice Wall] Ice Wall; [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph ; Ice Block
 /cast [@cursor,known:Ice Wall] Ice Wall; [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph
 END
-VER 3 00000000000000B9 " " "134400"
-#showtooltip
-/use 15
+VER 3 00000000000000D7 " " "134400"
+#showtooltip [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph ; Frost Nova
+/cast [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph
 END
-VER 3 0000000000000088 " " "2103806"
-/run C_NamePlate.SetNamePlateFriendlySize(70, 100)
+VER 3 0000000000000068 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Mutilate
+/cast [nostealth] startattack
+/cast Mutilate
 END
-VER 3 00000000000000CA " " "134400"
-#showtooltip Remove Curse
-/cast [target=party2] Remove Curse
+VER 3 00000000000000DE " " "134400"
+#showtooltip Shadow Word: Pain
+/cast [@focus] Shadow Word: Pain
 END
-VER 3 00000000000000CB " " "134400"
+VER 3 00000000000000D3 "1" "134400"
+#showtooltip Shadowstep
+/cast [@party1] Shadowstep
+END
+VER 3 00000000000000CB "1" "134400"
 #showtooltip Counterspell
 /stopcasting
 /cast [@arena1] Counterspell
 END
-VER 3 00000000000000CC " " "134400"
+VER 3 000000000000008A "1" "134400"
+#showtooltip Remove Curse
+/cast [target=party1] Remove Curse
+END
+VER 3 00000000000000DC "1" "134400"
+#showtooltip Purify
+/cast [@party1] Purify
+END
+VER 3 00000000000000CC "2" "134400"
 #showtooltip Counterspell
 /stopcasting
 /cast [@arena2] Counterspell
 END
-VER 3 00000000000000CD " " "134400"
+VER 3 00000000000000D4 "2" "134400"
+#showtooltip Shadowstep
+/cast [@party2] Shadowstep
+END
+VER 3 00000000000000CA "2" "134400"
+#showtooltip Remove Curse
+/cast [target=party2] Remove Curse
+END
+VER 3 00000000000000DD "2" "134400"
+#showtooltip Purify
+/cast [@party2] Purify
+END
+VER 3 00000000000000CD "3" "134400"
 #showtooltip Counterspell
 /stopcasting
 /cast [@arena3] Counterspell
@@ -423,6 +484,7 @@ VER 3 0000000000000096 "camera" "133874"
 /console cameraReduceUnexpectedMovement 1
 /console set ResampleAlwaysSharpen 1
 /console UnitNamePlayerGuild 0
+/dump GetCVar("cameraDistanceMaxZoomFactor")
 END
 VER 3 000000000000009B "DELAY MS" "135751"
 /dump GetCVar("SpellQueueWindow")
@@ -440,7 +502,4 @@ VER 3 00000000000000A8 "stance" "135754"
 /cast [stance:1/2/3] Ambush
 /cast [stance:0] Sinister Strike
 /cast Stealth
-END
-VER 3 000000000000009F "Weather" "135147"
-/console SET weatherDensity "0"
 END
