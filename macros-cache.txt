@@ -1,11 +1,6 @@
-VER 3 0000000000000006 " " "INV_MISC_QUESTIONMARK"
-#showtooltip Counterspell
-/stopcasting
-/cancelaura Ice Block
-/cast [modifier:ctrl, target=focus] Counterspell
-/cast [modifier:shift, target=focus] Counterspell
-/cast [nomodifier] Counterspell
-/run if IsAltKeyDown()then PetDismiss()end
+VER 3 00000000000000F3 " " "INV_Misc_QuestionMark"
+#showtooltip Shuriken Toss
+/cast [@focus] Shuriken Toss
 END
 VER 3 000000000000000F " " "INV_MISC_QUESTIONMARK"
 #showtooltip Arcane Barrage
@@ -216,10 +211,6 @@ VER 3 00000000000000B6 " " "134400"
 /cast [@target] Shuriken Storm
 /startattack [@target, exists]
 END
-VER 3 00000000000000C5 " " "134400"
-#showtooltip [known: Presence of Mind] Presence of Mind ; Arcane Surge
-/cast Arcane Surge
-END
 VER 3 00000000000000B8 " " "134400"
 #showtooltip
 /use 6
@@ -422,6 +413,19 @@ VER 3 00000000000000EC " " "INV_Misc_QuestionMark"
 #showtooltip Sprint
 /cast [target=focus] Shadowstep
 END
+VER 3 0000000000000006 " " "INV_MISC_QUESTIONMARK"
+#showtooltip Counterspell
+/stopcasting
+/cancelaura Ice Block
+/cast [modifier:ctrl, target=focus] Counterspell
+/cast [modifier:shift, target=focus] Counterspell
+/cast [nomodifier] Counterspell
+/run if IsAltKeyDown()then PetDismiss()end
+END
+VER 3 00000000000000D7 " " "134400"
+#showtooltip [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph ; Frost Nova
+/cast [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph
+END
 VER 3 00000000000000F0 " " "INV_Misc_QuestionMark"
 #showtooltip Conjure Refreshment
 /cast [nomod] Conjured Mana Bun
@@ -430,10 +434,6 @@ VER 3 00000000000000F0 " " "INV_Misc_QuestionMark"
 /cast [mod:shift] Conjure Refreshment
 /run if IsAltKeyDown()then PetDismiss()end
 END
-VER 3 00000000000000D7 " " "134400"
-#showtooltip [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph ; Frost Nova
-/cast [known:Ring of Frost] Ring of Frost; [known:Mass Polymorph] Mass Polymorph
-END
 VER 3 0000000000000073 " " "INV_MISC_QUESTIONMARK"
 #showtooltip Swift Zulian Panther
 /cast Swift Zulian Panther
@@ -441,13 +441,22 @@ VER 3 0000000000000073 " " "INV_MISC_QUESTIONMARK"
 /cancelaura Spirit of Redemption
 /cancelform
 END
-VER 3 00000000000000F3 " " "INV_Misc_QuestionMark"
-#showtooltip Shuriken Toss
-/cast [@focus] Shuriken Toss
-END
 VER 3 00000000000000FA " " "134400"
 #showtooltip Shadow Word: Pain
 /cast [@focus] Shadow Word: Pain
+END
+VER 3 0000000000000102 " " "134400"
+#showtooltip
+/cast [known:Ice Nova] Ice Nova; Cone of Cold
+END
+VER 3 0000000000000105 " " "134400"
+#showtooltip [known: Mirror Image] Mirror Image; Ice Block
+/stopcasting
+/cast [nomod] !Ice Block
+END
+VER 3 0000000000000106 " " "134400"
+#showtooltip
+/cast [known:Presence of Mind] Presence of Mind; [known: Arcanosphere] Arcanosphere; Touch of the Magi
 END
 VER 3 00000000000000E2 "1" "134400"
 #showtooltip Holy Word: Chastise
@@ -491,14 +500,14 @@ VER 3 00000000000000CA "2" "134400"
 #showtooltip Remove Curse
 /cast [@party2] Remove Curse
 END
+VER 3 00000000000000E4 "3" "134400"
+#showtooltip Holy Word: Chastise
+/cast [@arena3] Holy Word: Chastise
+END
 VER 3 00000000000000CD "3" "134400"
 #showtooltip Counterspell
 /stopcasting
 /cast [@arena3] Counterspell
-END
-VER 3 00000000000000E4 "3" "134400"
-#showtooltip Holy Word: Chastise
-/cast [@arena3] Holy Word: Chastise
 END
 VER 3 000000000000009E "Bags" "134400"
 /run C_Container.SetSortBagsRightToLeft(true)
@@ -526,8 +535,11 @@ END
 VER 3 00000000000000E0 "party 2" "134400"
 /tar [@party2]
 END
-VER 3 00000000000000E7 "time-lost" "134400"
-/targetexact Time-Lost Proto-Drake
-/targetexact Vyragosa
-/run local N = UnitName("Target");if N and (N=="Time-Lost Proto-Drake") then PlaySound(13363);print(date(),N,"Found");SetRaidTarget("target",8);end
+VER 3 0000000000000107 "pom" "134400"
+#showtooltip Presence of Mind
+/cast Presence of Mind
+END
+VER 3 0000000000000101 "self" "134400"
+#showtooltip Remove Curse
+/cast [@player] Remove Curse
 END
